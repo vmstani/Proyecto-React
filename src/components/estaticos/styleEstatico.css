@@ -1,19 +1,137 @@
-nav{
-    background-color: #a014d8;
-    color: white;
-    padding: 10px;
-}
-ul{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    align-items: center;
+/* Estilos generales del header */
+header {
+  background-color: #a014d8;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
 }
 
-.link{
-    color: white;
-    text-decoration: none;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li:first-child {
+  margin-left: 0;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #c851e0;
+}
+
+.cartnav {
+  position: relative;
+}
+
+.btnCart {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.fa-cart-shopping {
+  color: rgb(230, 222, 222);
+  font-size: 1.5rem;
+}
+
+/* Estilos del menú hamburguesa (oculto por defecto en pantallas grandes) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Animación del icono */
+header.menu-open .menu-toggle .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+header.menu-open .menu-toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+
+header.menu-open .menu-toggle .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Estilos para la lista de navegación desplegable */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #a014d8;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.nav-links.open li {
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+  }
+
+  .nav-links {
+    display: none; /* Ocultar la lista en pantallas pequeñas por defecto */
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostrar el menú hamburguesa */
+  }
+
+  .nav-links li {
+    margin-left: 0; /* Eliminar margen izquierdo en la vista vertical */
+  }
 }
 
 footer{
@@ -25,13 +143,3 @@ footer{
     
     
 }
-
-.btnCart{
-    background-color: transparent;
-    border: none;
-}
-
-.fa-cart-shopping{
-    color: rgb(230, 222, 222);
-}
-
