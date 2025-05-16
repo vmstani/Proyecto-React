@@ -1,0 +1,103 @@
+/* Estilos generales */
+.contact-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Formulario */
+.contact-form {
+  padding: 1.5rem;
+}
+
+.form-group-custom {
+  margin-bottom: 1.8rem;
+}
+
+.form-label-custom {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-input-custom,
+.form-textarea-custom {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input-custom:focus,
+.form-textarea-custom:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  outline: none;
+}
+
+.form-textarea-custom {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.error-feedback {
+  display: block;
+  margin-top: 0.4rem;
+  color: #e74c3c;
+  font-size: 0.875rem;
+}
+
+/* Botón */
+.submit-button {
+  padding: 0.8rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensajes */
+.success-message {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+}

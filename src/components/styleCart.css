@@ -1,0 +1,147 @@
+/* Estructura principal del carrito */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer.open {
+    transform: translateX(0%);
+}
+
+/* Cabecera del carrito */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+    position: sticky;
+    top: 0;
+}
+
+/* Contenido del carrito */
+.cart-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre items */
+}
+
+/* Estilo para cada item del carrito */
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Sección de imagen y detalles */
+.cart-item-top {
+    display: flex;
+    gap: 15px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.cart-item-price {
+    color: #8B0000; /* Rojo vino */
+    font-weight: 700;
+}
+
+/* Controles de cantidad y eliminar */
+.cart-item-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+    margin-top: 10px; /* Espacio adicional arriba de los controles */
+}
+
+.remove-item:hover {
+    background-color: rgba(231, 76, 60, 0.1); /* Fondo rojo muy suave al pasar el mouse */
+}
+
+/* Ajustar el grupo de cantidad para que no quede pegado al eliminar */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto; /* Empuja el botón eliminar hacia la derecha */
+}
+.quantity-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px; /* Más espacio interno */
+    margin-left: 15px; /* Espacio a la izquierda del botón */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+     margin-right: 5px; /* Espacio entre el ícono y el texto */
+    font-size: 16px; /* Tamaño del ícono */
+}
+
+/* Pie del carrito */
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+    position: sticky;
+    bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .cart-drawer {
+        width: 100%;
+    }
+}
