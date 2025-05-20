@@ -63,6 +63,14 @@
       "stock":  15,
       "imagen": "https://co.fitness24seven.com/media/gpskprjz/pt-konsultation.png?cc=0,0.2059608394851961,0,0.349703223014804&width=630&quality=75&v=1da6c1a71b29750",
       "categoria": "fitness"
+    },
+      {
+      "id": 9,
+      "nombre": "Reto 21 días Hipopresivos",
+      "precio": 20000,
+      "stock":  15,
+      "imagen": "https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2021/08/22/6121eeb0e59a5.png",
+      "categoria": "fitness"
     }
     
   ]
