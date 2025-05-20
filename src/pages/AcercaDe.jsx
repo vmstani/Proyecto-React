@@ -3,7 +3,7 @@ import Header from '../components/estaticos/Header';
 import Footer from '../components/estaticos/Footer';
 import './styleAcercaDe.css';
 // Importa la imagen correctamente
-import barImage from '../assets/bar.jpg'; // Asegúrate que la ruta sea correcta
+import barImage from '../assets/fitness.jpeg'; // Asegúrate que la ruta sea correcta
 
 const AcercaDe = ({ cart, borrarProducto }) => {
   return (
@@ -12,13 +12,13 @@ const AcercaDe = ({ cart, borrarProducto }) => {
       <h1 className="text-center mb-4">Acerca De</h1>
       <div className="container">
         <div className="text-column">
-          <h2>Un Brindis por las Buenas Historias (y los Buenos Tragos)</h2>
-          <p>En Che, Trago Va, creemos que cada botella tiene una historia y cada encuentro en nuestra barra puede convertirse en una. Somos más que un lugar para beber; somos un espacio donde se forjan recuerdos, donde las preocupaciones se diluyen con el hielo y donde la noche siempre promete algo interesante.</p>
-          <p>Nuestra aventura comenzó con una simple idea: crear un bar que celebre la cultura del buen beber en el corazón de Buenos Aires. Queríamos un lugar con alma, donde la calidad de las bebidas se igualara a la calidez del ambiente. Por eso, dedicamos tiempo y pasión a seleccionar cada destilado, a experimentar con combinaciones de sabores y a perfeccionar esos cócteles clásicos que nunca fallan.</p>
-          <p>Aquí vas a encontrar desde ese whisky añejo que invita a la reflexión hasta ese vermut artesanal que evoca las tradiciones porteñas. Nuestra carta es un viaje a través de diferentes aromas y texturas, pensada para acompañar cada estado de ánimo y cada conversación. Y si no encontrás exactamente lo que buscás, no dudes en preguntar a nuestros bartenders. Son alquimistas de la barra, listos para crear algo especial para vos.</p>
-          <p>Pero más allá de lo que servimos, lo que realmente nos define es la gente que cruza nuestra puerta. Amigos que se reencuentran, parejas que celebran, solitarios que buscan una charla amena… Che, Trago Va es un crisol de experiencias y personalidades, un lugar donde todos son bienvenidos.</p>
-          <p>Así que, si estás buscando un respiro después de un largo día, un lugar para celebrar una ocasión especial o simplemente un buen trago en un ambiente relajado y auténtico, te esperamos con las puertas abiertas. Vení a ser parte de nuestra historia.</p>
-          <p className="signature">El equipo de Che, Trago Va<br /></p>
+          <h2>Mi Viaje, Tu Transformación</h2>
+          <p>¡Hola! Soy Verónica, y si estás leyendo esto, es probable que compartamos algo en común: la pasión por el bienestar, o al menos la curiosidad por descubrirlo. Este espacio no es solo un sitio web; es el reflejo de años de dedicación, sudor y, sobre todo, aprendizaje en el mundo del fitness</p>
+          <p> Mi propia historia en el fitness no empezó con un físico perfecto ni con una rutina de ejercicios impecable. Como muchos, hubo un momento en que sentí que algo faltaba, que mi energía no era la ideal y que mi cuerpo no reflejaba lo que yo quería. Recuerdo claramente en pandemia no podía ir a entrenar y haberme sentido frustrado/a sin saber qué hacer. Esa chispa inicial me llevó a sumergirme de lleno en el entrenamiento, la nutrición y el autoconocimiento.</p>
+          <p>No fue un camino lineal. Hubo días de desmotivación, mesetas en el progreso y la constante necesidad de adaptar lo que aprendía a mi propia vida. Experimenté con diversas disciplinas, desde clases de spinning, entrenamiento funcional, siempre buscando entender cómo funciona el cuerpo y cómo sacarle el máximo provecho. Cada error fue una lección, cada logro una confirmación de que con constancia y la información correcta, el cambio es posible</p>
+          <p>Con el tiempo, mi obsesión personal se convirtió en una vocación. Decidí que quería ayudar a otros a transitar su propio camino hacia una vida más saludable y fuerte. Me formé en Entrenamiento Personal, Entrenamiento Funcional, Hipopresivos, Spinning, Stretching y he dedicado los últimos años a guiar a personas de todas las edades y niveles a alcanzar sus metas</p>
+          <p>Aquí, mi compromiso es compartir contigo todo lo que he aprendido. No te prometo atajos, pero sí un enfoque honesto, basado en la ciencia y adaptado a tus necesidades. Mi objetivo es que encuentres en el fitness no solo un medio para transformar tu cuerpo, sino una herramienta para fortalecer tu mente y potenciar tu vida.</p>
+          <p className="signature">Así que, bienvenido/a. ¿Estás listo/a para empezar tu propia transformación?<br /></p>
         </div>
         <div className="image-column">
           {/* Usa la imagen importada */}

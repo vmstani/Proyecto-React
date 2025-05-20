@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styleEstatico.css';
 import Cart from '../Cart';
+import logo from '../../assets/logo.png'; // Asegúrate de que la ruta sea correcta
 
 const Header = ({ cartItems, borrarProducto }) => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -15,7 +16,7 @@ const Header = ({ cartItems, borrarProducto }) => {
     <header className={isMenuOpen ? 'menu-open' : ''}>
       <nav>
         <Link to="/" className="logo">
-          Tu Logo
+          <img src={logo} alt="Logo de la empresa" /> {/* Logo como imagen */}
         </Link>
         <div className="menu-toggle" onClick={toggleMenu}>
           <div className="bar"></div>

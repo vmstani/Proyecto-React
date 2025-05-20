@@ -3,8 +3,9 @@ import Header from '../components/estaticos/Header';
 import Footer from '../components/estaticos/Footer';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
-import bannerImage from '../assets/tragos.jpg';
+import bannerImage from '../assets/gym.jpg';
 import './styleHome.css'; // Nuevo archivo de estilos
+
 
 const Home = ({ cart, productos, cargando, agregarCarrito, borrarProducto }) => {
   return (
@@ -20,39 +21,39 @@ const Home = ({ cart, productos, cargando, agregarCarrito, borrarProducto }) => 
           className="hero-image"
         />
         <div className="hero-overlay">
-          <h1 className="hero-title">Bienvenidos a Che, Trago Va</h1>
-          <p className="hero-subtitle">Donde cada trago cuenta una historia</p>
+          <h1 className="hero-title">¡Bienvenido/a a tu punto de  partida hacia una vida saludable!</h1>
+          <p className="hero-subtitle">Transformá tu Cuerpo. Fortalecé tu Vida.</p>
         </div>
       </section>
       
       <main className="main-content">
         <Container>
           <div className="welcome-section">
-            <h2 className="section-title">Descubre Nuestra Mixología</h2>
+            <h2 className="section-title"> Empezá Hoy. Sentite Fuerte Siempre.</h2>
             
             <div className="text-grid">
               <div className="text-block">
                 <p className="lead-text">
-                  Encontrá la coctelería de autor y los clásicos que amás, elaborados con ingredientes premium y la pasión de expertos bartenders.
+                  Creemos que el fitness es mucho más que ejercicio; es una herramienta para transformar tu vida. Aquí, encontrarás la guía, la inspiración y los recursos que necesitas para alcanzar tus metas de bienestar, sin importar cuál sea tu punto de partida.
                 </p>
               </div>
               
               <div className="text-block">
                 <p>
-                  Te ofrecemos una amplia variedad de tragos listos para servir, desde refrescantes aperitivos hasta sofisticados digestivos. Descubrí nuevas combinaciones y disfrutá de la calidad de un bar de primer nivel en la puerta de tu casa.
+                  Sabemos que el camino hacia una vida activa puede parecer abrumador. Tal vez has intentado antes y no lograste mantener la constancia, o quizás estás dando tus primeros pasos y no sabes por dónde empezar. ¡No te preocupes! Mi trayectoria personal en el fitness me enseñó que la clave está en la información correcta, la adaptación a tus necesidades y un apoyo genuino.
                 </p>
                 <div className="highlight-box">
-                  <p>¡Tu próxima celebración comienza aquí!</p>
+                  <p>¡Tu próximo transformación comienza aquí!</p>
                 </div>
               </div>
               
               <div className="text-block">
-                <h3 className="callout-title">¿Antojo de un trago delicioso?</h3>
+                <h3 className="callout-title">¿Listo/a para dar el primer paso hacia la mejor versión de ti? ¡Estamos aquí para ayudarte a lograrlo!</h3>
                 <p className="callout-text">
-                  ¡Llegaste al lugar indicado! Te ofrecemos una selección de cócteles listos para disfrutar, elaborados con ingredientes de alta calidad y entregados directamente en tu puerta.
+                  ¡Llegaste al lugar indicado! Te ofrecemos planes para todos los niveles.
                 </p>
                 <p>
-                  Explorá nuestra variedad, elegí tus favoritos y preparate para disfrutar de una experiencia de bar en casa sin complicaciones. ¡Hacé tu pedido ahora!
+                  Explora nuestra galería de productos para encontrar lo que te impulse, sumérgete en el apartado "Acerca de Nosotros" para conocer mi historia y mi filosofía, y no dudes en contactarnos para cualquier consulta.
                 </p>
               </div>
             </div>
