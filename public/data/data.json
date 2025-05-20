@@ -1,17 +1,17 @@
 [
     {
       "id": 1,
-      "nombre": "Entrenador especialista en Fuerza",
+      "nombre": "Entrenador Personal",
       "precio": 115000,
-      "stock": 50,
-      "imagen": "https://cursoshighfitness.com/wp-content/uploads/2025/01/Especialista-en-Fuerza.webp",
+      "stock": 20,
+      "imagen": "https://www.runfit.es/wp-content/uploads/2019/09/ejercicios-fuerza-2.jpg",
       "categoria": "fuerza"
     },
     {
       "id": 2,
       "nombre": "Curso de Hipopresivo - Nivel 1",
       "precio": 90000,
-      "stock": 45,
+      "stock": 30,
       "imagen": "https://nombredemujer.es/wp-content/uploads/2022/11/IMAGEN-CURSOS.jpg",
       "categoria": "fitness"
     },
@@ -27,7 +27,7 @@
       "id": 4,
       "nombre": "Curso de entrenamiento funcional",
       "precio": 99000,
-      "stock": 1500,
+      "stock": 50,
       "imagen": "https://www.soycorredor.es/uploads/s1/10/15/92/61/swing-con-kettlebell-como-parte-de-tu-entrenamiento-funcional_2_790x454.jpeg",
       "categoria": "fitness"
     },
@@ -35,7 +35,7 @@
       "id": 5,
       "nombre": "Curso de ABS",
       "precio": 55000,
-      "stock": 200,
+      "stock": 35,
       "imagen": "https://clubgymsierra.es/wp-content/uploads/2021/06/Ejercicios-para-conseguir-el-six-pack-abs.png",
       "categoria": "fitness"
     },
@@ -43,7 +43,7 @@
       "id": 6,
       "nombre": "Curso de Glúteos",
       "precio": 60000,
-      "stock": 2000,
+      "stock": 25,
       "imagen": "https://www.hola.com/horizon/original_aspect_ratio/10d89c409358-patada-gluteo-2z-z.jpg?im=Resize=(640),type=downsize",
       "categoria": "fuerza"
     },
@@ -52,15 +52,15 @@
       "id": 7,
       "nombre": "Curso de Hitt",
       "precio": 70000,
-      "stock": 2000,
-      "imagen": "https://www.mdzol.com/u/fotografias/m/2024/8/20/f768x1-1640261_1640388_5050.jpg",
+      "stock": 55,
+      "imagen": "https://as01.epimg.net/deporteyvida/imagenes/2017/09/02/portada/1504312026_944464_1504312206_noticia_normal_recorte1.jpg",
       "categoria": "fitness"
     },
      {
       "id": 8,
       "nombre": "Planificación Personalizada",
       "precio": 20000,
-      "stock": 2000,
+      "stock":  15,
       "imagen": "https://co.fitness24seven.com/media/gpskprjz/pt-konsultation.png?cc=0,0.2059608394851961,0,0.349703223014804&width=630&quality=75&v=1da6c1a71b29750",
       "categoria": "fitness"
     }
