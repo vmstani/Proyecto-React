@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styleEstatico.css';
 import Cart from '../Cart';
-import logo from '../../assets/logo.png'; // Asegúrate de que la ruta sea correcta
+import logo from '../../assets/logo.png'; 
 
 const Header = ({ cartItems, borrarProducto }) => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -42,6 +42,11 @@ const Header = ({ cartItems, borrarProducto }) => {
           <li>
             <Link to="/contacto" className="link" onClick={() => setMenuOpen(false)}>
               Contacto
+            </Link>
+          </li>
+            <li>
+            <Link to="/Login" className="qtyButton" onClick={() => setMenuOpen(false)}>
+              Login
             </Link>
           </li>
           <li className="cartnav">

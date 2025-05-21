@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-// import './App.css'
 import { BrowserRouter as Router, Routes,  Route } from 'react-router-dom'
 import Home from './pages/Home'
 import AcercaDe from './pages/AcercaDe'
 import Contactos from './pages/Contactos'
 import GaleriaDeProductos from './pages/GaleriaDeProductos'
 import NotFound from './pages/NotFound'
+import DetallesProductos from './components/DetallesProductos'
+import Login from './pages/Login'
+
 
 
 
@@ -63,6 +65,7 @@ function App() {
   
 
   return (
+     
     <Router>
       <Routes>
 
@@ -72,17 +75,19 @@ function App() {
 
         <Route path='/productos' element={<GaleriaDeProductos borrarProducto={handleDeleteFromCart} agregarCarrito={handleAddToCart} cart={cart} productos={productos} cargando={cargando}/>}/>
 
+        <Route
+          path='/productos/:id' element={<DetallesProductos productos={productos}  />}/>
+
         <Route path='/contacto' element={<Contactos borrarProducto={handleDeleteFromCart} cart={cart}/>}/>
-        
-     
 
-
+        <Route path='/login' element={<Login/>}/>
 
         <Route path='*' element={<NotFound/>}/>
 
       </Routes>
       
     </Router>
+    
   )
 }
 
