@@ -1,0 +1,38 @@
+
+/* Estilo del formulario */
+.custom-form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: none;
+  justify-content: center;
+}
+
+/* Etiquetas */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+/* Botón */
+.custom-button {
+  width: 100%;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #5c0a8b;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #ab25e0;
+}

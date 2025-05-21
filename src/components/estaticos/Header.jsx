@@ -46,7 +46,7 @@ const Header = ({ cartItems, borrarProducto }) => {
           </li>
             <li>
             <Link to="/Login" className="qtyButton" onClick={() => setMenuOpen(false)}>
-              Login
+              Iniciar Sesión
             </Link>
           </li>
           <li className="cartnav">
