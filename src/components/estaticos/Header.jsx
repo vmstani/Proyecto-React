@@ -36,7 +36,7 @@ const Header = ({ cartItems, borrarProducto }) => {
           </li>
           <li>
             <Link to="/productos" className="link" onClick={() => setMenuOpen(false)}>
-              Galeria de productos
+              Productos
             </Link>
           </li>
           <li>
@@ -44,11 +44,13 @@ const Header = ({ cartItems, borrarProducto }) => {
               Contacto
             </Link>
           </li>
-            <li>
-            <Link to="/Login" className="qtyButton" onClick={() => setMenuOpen(false)}>
-              Iniciar Sesión
-            </Link>
-          </li>
+          <li className='btnLogin'>
+              <Link to='/login' className='link'><i className="fa-solid fa-right-to-bracket"></i></Link>
+            </li>
+            <li className='btnAdmin'>
+              <Link to='/admin' className='link'><i className="fa-solid fa-user-tie"></i></Link>
+            </li>
+
           <li className="cartnav">
             <button className="btnCart" onClick={() => setCartOpen(true)}>
               <i className="fa-solid fa-cart-shopping"></i>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import './styleAdmin.css'
 
 const Admin = () => {
     const [products, setProducts] = useState([]);
     const [form, setForm] = useState({ id: null, name: "", price: "" });
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         fetch("/data/data.json")
@@ -17,72 +17,83 @@ const Admin = () => {
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
-                setError(true);
                 setLoading(false);
             });
     }, []);
 
     return (
-        <div className="container">
-            {loading ? (
-                <p>Cargando...</p>
-            ) : (
-                <>
-                    <nav>
-                        <ul className="nav">
-                            <li className="navItem">
-                                <button className="navButton">
-                                    <i className="fa-solid fa-right-from-bracket"></i>
-                                </button>
-                            </li>
-                            <li className="navItem">
-                                <a href="/admin">Admin</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <h1 className="title">Panel Administrativo</h1>
-                    <form className="form">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Nombre del producto"
-                            className="input"
-                            required
-                        />
-                        <input
-                            type="number"
-                            name="price"
-                            placeholder="Precio del producto"
-                            className="input"
-                            required
-                        />
-                        <button type="submit" className="button">
-                            {form.id ? "Editar" : "Crear"}
-                        </button>
-                    </form>
-                    <ul className="list">
-                        {products.map((product) => (
-                            <li key={product.id} className="listItem">
-                                <img
-                                    src={product.imagen}
-                                    alt={product.nombre}
-                                    className="listItemImage"
-                                />
-                                <span>{product.nombre}</span>
-                                <span>${product.precio}</span>
-                                <div>
-                                    <button className="editButton">Editar</button>
-
-                                    <button className="deleteButton">Eliminar</button>
-                                </div>
-                            </li>
-                        ))}
+        <div className="admin-page">
+            <nav className="navbar">
+                <div className="nav-container">
+                    <ul className="nav-menu">
+                        <li className="nav-item">
+                            <a href="/admin">Administración</a>
+                        </li>
                     </ul>
-                </>
-            )}
+                    <button className="logout-btn">
+                        <i className="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+            </nav>
+
+            <main className="main-content">
+                {loading ? (
+                    <div className="loading-state">Cargando productos...</div>
+                ) : (
+                    <>
+                        <h1 className="page-title">Panel de Administración</h1>
+                        
+                        <form className="product-form">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Nombre del producto"
+                                className="form-input"
+                                required
+                            />
+                            <input
+                                type="number"
+                                name="price"
+                                placeholder="Precio"
+                                className="form-input"
+                                required
+                            />
+                            <button type="submit" className="submit-btn">
+                                {form.id ? "Actualizar" : "Agregar"}
+                            </button>
+                        </form>
+                        
+                        <ul className="products-grid">
+                            {products.map((product) => (
+                                <li key={product.id} className="product-card">
+                                    <img
+                                        src={product.imagen}
+                                        alt={product.nombre}
+                                        className="product-image"
+                                    />
+                                    <div className="product-info">
+                                        <h3 className="product-name">{product.nombre}</h3>
+                                        <p className="product-price">${product.precio}</p>
+                                    </div>
+                                    <div className="product-actions">
+                                        <button className="action-btn edit-btn">
+                                            <i className="fa-solid fa-pen"></i>
+                                            Editar
+                                        </button>
+                                        <button className="action-btn delete-btn">
+                                            <i className="fa-solid fa-trash"></i>
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </main>
         </div>
     );
 };
 
 export default Admin;
-

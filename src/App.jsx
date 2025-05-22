@@ -7,6 +7,7 @@ import GaleriaDeProductos from './pages/GaleriaDeProductos'
 import NotFound from './pages/NotFound'
 import DetallesProductos from './components/DetallesProductos'
 import Login from './pages/Login'
+import Admin from './pages/Admin'
 
 
 
@@ -81,6 +82,8 @@ function App() {
         <Route path='/contacto' element={<Contactos borrarProducto={handleDeleteFromCart} cart={cart}/>}/>
 
         <Route path='/login' element={<Login/>}/>
+
+        <Route path='/admin' element={<Admin/>}/>
 
         <Route path='*' element={<NotFound/>}/>
 

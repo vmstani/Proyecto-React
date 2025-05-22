@@ -8,7 +8,7 @@ const GaleriaDeProductos = ({cart,productos, cargando,agregarCarrito, borrarProd
   return (
     <>
       <Header borrarProducto={borrarProducto} cartItems={cart}/>
-      <h1>Galeria de productos</h1>
+      <h1>Productos</h1>
       {
      
           <ProductList agregarCarrito={agregarCarrito} productos={productos}/>
