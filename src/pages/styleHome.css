@@ -1,8 +1,8 @@
 /* Estilos generales */
 :root {
-  --primary-color: #8B0000; /* Rojo vino */
-  --secondary-color: #F5DEB3; /* Beige */
-  --accent-color: #D4AF37; /* Dorado */
+  --primary-color: #74008b; /* Rojo vino */
+  --secondary-color: #d3b7ee; /* Beige */
+  --accent-color: #0c0b0b; /* Dorado */
   --text-color: #333;
   --light-text: #f8f9fa;
   --dark-bg: #1a1a1a;

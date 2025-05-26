@@ -87,9 +87,7 @@ function App() {
 
        <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
-       <Route path='/admin' element={<RutaProtegida isAuthenticated={isAuthenticated}> <Admin /></RutaProtegida>
-  }
-/>
+       <Route path="/admin" element={<RutaProtegida><Admin /> </RutaProtegida>}/>
 
 
         <Route path='*' element={<NotFound/>}/>

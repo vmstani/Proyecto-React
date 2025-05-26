@@ -1,19 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../context/CartContext'; // Ajustá la ruta si es diferente
+import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './styleLogin.css';
 
-function Login({ setIsAuthenticated }) {
+function Login() {
+  const { setIsAuth } = useContext(CartContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Aquí podrías validar contra un backend o datos fijos
     if (email === 'admin@admin.com' && password === '1234') {
-      setIsAuthenticated(true);
-      localStorage.setItem('auth', 'true');
+      setIsAuth(true);
+      navigate('/admin');
     } else {
       alert('Credenciales incorrectas');
     }
