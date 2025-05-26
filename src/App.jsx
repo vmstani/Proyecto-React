@@ -8,6 +8,8 @@ import NotFound from './pages/NotFound'
 import DetallesProductos from './components/DetallesProductos'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
+import RutaProtegida from './auth/RutasProtegidas'
+
 
 
 
@@ -18,6 +20,8 @@ function App() {
   const [productos, setProductos] = useState([])
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
 
   useEffect(()=>{
     fetch('/data/data.json')
@@ -81,9 +85,12 @@ function App() {
 
         <Route path='/contacto' element={<Contactos borrarProducto={handleDeleteFromCart} cart={cart}/>}/>
 
-        <Route path='/login' element={<Login/>}/>
+       <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
-        <Route path='/admin' element={<Admin/>}/>
+       <Route path='/admin' element={<RutaProtegida isAuthenticated={isAuthenticated}> <Admin /></RutaProtegida>
+  }
+/>
+
 
         <Route path='*' element={<NotFound/>}/>
 
