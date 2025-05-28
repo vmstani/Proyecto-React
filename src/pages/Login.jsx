@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './styleLogin.css';
 
+
 function Login() {
   const { setIsAuth } = useContext(CartContext);
   const [email, setEmail] = useState('');
@@ -17,8 +18,8 @@ function Login() {
     if (email === 'admin@admin.com' && password === '1234') {
       setIsAuth(true);
       navigate('/admin');
-    } else {
-      alert('Credenciales incorrectas');
+    }else{
+       navigate('/');
     }
   };
 
