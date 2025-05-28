@@ -29,17 +29,19 @@ const Header = ({ cartItems, borrarProducto }) => {
               Inicio
             </Link>
           </li>
-          <li>
-            <Link to="/acercade" className="link" onClick={() => setMenuOpen(false)}>
-              Sobre nosotros
-            </Link>
-          </li>
+        
           <li>
             <Link to="/productos" className="link" onClick={() => setMenuOpen(false)}>
               Productos
             </Link>
           </li>
+            <li>
+            <Link to="/acercade" className="link" onClick={() => setMenuOpen(false)}>
+             Nosotros
+            </Link>
+          </li>
           <li>
+            
             <Link to="/contacto" className="link" onClick={() => setMenuOpen(false)}>
               Contacto
             </Link>

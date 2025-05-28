@@ -9,7 +9,7 @@ const AcercaDe = ({ cart, borrarProducto }) => {
   return (
     <>
       <Header borrarProducto={borrarProducto} cartItems={cart} />
-      <h1 className="text-center mb-4">Acerca De</h1>
+      <h1 className="text-center mb-4">Nosotros</h1>
       <div className="container">
         <div className="text-column">
           <h2>Mi Viaje, Tu Transformación</h2>
