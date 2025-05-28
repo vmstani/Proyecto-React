@@ -27,9 +27,10 @@
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #ddd;
-    background-color: #f4f4f4;
+    background-color: #f3f3f3;
     font-size: 18px;
     font-weight: bold;
+    color: black;
 }
 
 .close-button {
@@ -50,31 +51,23 @@
 
 /* Estilo para cada item del carrito */
 .cart-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex; /* Make it a flex container */
+    justify-content: space-between; /* Space out content and controls */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Adjust gap as needed */
     padding: 15px;
     border: 1px solid #eee;
     border-radius: 8px;
-    background-color: #fafafa;
+    color: #131212;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-/* Sección de imagen y detalles */
-.cart-item-top {
+/* Sección de imagen y detalles (renombrada para claridad en el código React si aplica) */
+/* Si solo necesitas el nombre y precio, puedes simplificar esto */
+.item-info { /* Nuevo o modificado para agrupar nombre y precio */
     display: flex;
-    gap: 15px;
-}
-
-.cart-item-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.cart-item-details {
-    flex: 1;
+    flex-direction: column;
+    flex-grow: 1; /* Allow it to take available space */
 }
 
 .cart-item-name {
@@ -89,13 +82,21 @@
 }
 
 /* Controles de cantidad y eliminar */
-.cart-item-controls {
+/* Reajustado para que el tacho esté al lado de la cantidad o a la derecha */
+.item-controls { /* Agrupamos cantidad y tacho */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px dashed #ccc;
-    padding-top: 10px;
+    gap: 15px; /* Espacio entre cantidad y tacho */
 }
+
+.quantity-controls span { /* Asegura que el texto de cantidad tenga buen color */
+    color: #333;
+}
+
+/* ELIMINADA: .cart-item-controls - Esta clase parece no ser usada directamente con la nueva estructura del item.
+   Si tu componente React usa esta clase, deberás ajustar su uso o eliminarla del JS también.
+   En tu código React proporcionado anteriormente, solo vi 'item-info' y 'item-controls'.
+*/
 
 .quantity-selector {
     display: flex;
@@ -123,19 +124,19 @@
     cursor: not-allowed;
 }
 
-.remove-item {
-    background: #e74c3c;
+.remove-item { /* Esta clase es para el botón que contiene el ícono de la basura */
+    background: none; /* Quitamos el fondo rojo para que sea solo el ícono */
     border: none;
-    color: white;
-    padding: 6px 12px;
+    color: #e74c3c; /* Color del ícono de basura */
+    padding: 0; /* Eliminamos padding extra */
     border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
+    font-size: 18px; /* Tamaño del ícono */
+    transition: color 0.2s ease; /* Transición para el color al pasar el mouse */
 }
 
 .remove-item:hover {
-    background-color: #c0392b;
+    color: #c0392b; /* Color al pasar el mouse */
 }
 
 /* Pie del carrito */
@@ -149,23 +150,74 @@
     justify-content: space-between;
 }
 
+
+
+/* ELIMINADA: .trash-icon - Esta clase ahora es redundante porque '.remove-item' maneja el estilo del ícono. */
+/* Si tu JSX usa la clase 'trash-icon', cámbiala a 'remove-item' en el botón del ícono. */
+
+/* Estilos para el resumen de compra */
+.cart-summary {
+    padding: 20px;
+    border-top: 1px solid #1b1a1a;
+    background: #f7f7f7;
+    color: black;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px 0;
+    padding-top: 10px;
+    border-top: 1px solid #181717;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6d0d75;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.checkout-button:hover {
+    background-color: #c568f0;
+}
+
+/* Estilos para carrito vacío */
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #666;
+}
+
+.empty-cart i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .cart-drawer {
         width: 100%;
     }
-}
-.trash-icon {
-  background: none;
-  border: none;
-  color: #e74c3c;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 0;
-  margin: 0;
-margin-left: 20px; 
-}
-
-.trash-icon:hover {
-  color: #c0392b;
 }

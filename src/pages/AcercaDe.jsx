@@ -22,7 +22,7 @@ const AcercaDe = ({ cart, borrarProducto }) => {
         </div>
         <div className="image-column">
           {/* Usa la imagen importada */}
-          <img src={barImage} alt="Imagen de nuestro bar Che, Trago Va" className="bar-image" />
+          <img src={barImage} alt="Fitness" className="fitness-image" />
         </div>
       </div>
       <Footer />
@@ -30,4 +30,4 @@ const AcercaDe = ({ cart, borrarProducto }) => {
   );
 };
 
-export default AcercaDe;
+export default AcercaDe
