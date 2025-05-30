@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './styleAdmin.css'
+import './styleAdmin.css';
 
 const Admin = () => {
     const [products, setProducts] = useState([]);
@@ -21,16 +21,24 @@ const Admin = () => {
             });
     }, []);
 
+    const handleLogout = () => {
+        // Limpiar sesión
+        localStorage.removeItem("token");
+        sessionStorage.clear();
+        // Redirigir al login
+        window.location.href = "/login";
+    };
+
     return (
         <div className="admin-page">
             <nav className="navbar">
                 <div className="nav-container">
                     <ul className="nav-menu">
                         <li className="nav-item">
-                            <a href="/admin">Administración</a>
+                            <span className="nav-link">Administración</span>
                         </li>
                     </ul>
-                    <button className="logout-btn">
+                    <button className="logout-btn" onClick={handleLogout}>
                         <i className="fa-solid fa-right-from-bracket"></i>
                         Cerrar sesión
                     </button>
@@ -43,7 +51,7 @@ const Admin = () => {
                 ) : (
                     <>
                         <h1 className="page-title">Panel de Administración</h1>
-                        
+
                         <form className="product-form">
                             <input
                                 type="text"
@@ -63,7 +71,7 @@ const Admin = () => {
                                 {form.id ? "Actualizar" : "Agregar"}
                             </button>
                         </form>
-                        
+
                         <ul className="products-grid">
                             {products.map((product) => (
                                 <li key={product.id} className="product-card">
