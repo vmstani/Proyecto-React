@@ -13,33 +13,20 @@ const Admin = () => {
     });
     const [loading, setLoading] = useState(true);
 
-    // Cargar productos desde localStorage o desde JSON
     useEffect(() => {
-        const storedProducts = localStorage.getItem("products");
-        if (storedProducts) {
-            setProducts(JSON.parse(storedProducts));
-            setLoading(false);
-        } else {
-            fetch("/data/data.json")
-                .then((response) => response.json())
-                .then((data) => {
-                    setTimeout(() => {
-                        setProducts(data);
-                        localStorage.setItem("products", JSON.stringify(data));
-                        setLoading(false);
-                    }, 2000);
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
+        fetch("/data/data.json")
+            .then((response) => response.json())
+            .then((data) => {
+                setTimeout(() => {
+                    setProducts(data);
                     setLoading(false);
-                });
-        }
+                }, 2000);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+                setLoading(false);
+            });
     }, []);
-
-    // Guardar productos en localStorage cada vez que cambian
-    useEffect(() => {
-        localStorage.setItem("products", JSON.stringify(products));
-    }, [products]);
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -55,6 +42,7 @@ const Admin = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (form.id) {
+            // Editar producto existente
             const updatedProducts = products.map((p) =>
                 p.id === form.id
                     ? {
@@ -69,6 +57,7 @@ const Admin = () => {
             );
             setProducts(updatedProducts);
         } else {
+            // Agregar nuevo producto
             const newProduct = {
                 id: Date.now(),
                 nombre: form.name,
@@ -80,6 +69,7 @@ const Admin = () => {
             setProducts([...products, newProduct]);
         }
 
+        // Limpiar formulario
         setForm({
             id: null,
             name: "",
