@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import './styleEstatico.css';
 import Cart from '../Cart';
 import logo from '../../assets/logo.png';
+import { useCart } from '../../context/CartContext'; // Ajustá la ruta si es necesario
 
-const Header = ({ cartItems, borrarProducto }) => {
+const Header = () => {
   const [isCartOpen, setCartOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const { cart, handleDeleteFromCart } = useCart();
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  // Cierra el menú si se cambia a desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -38,33 +40,17 @@ const Header = ({ cartItems, borrarProducto }) => {
         </div>
 
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <li>
-            <Link to="/" className="link" onClick={() => setMenuOpen(false)}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link to="/productos" className="link" onClick={() => setMenuOpen(false)}>
-              Productos
-            </Link>
-          </li>
-          <li>
-            <Link to="/acercade" className="link" onClick={() => setMenuOpen(false)}>
-              Nosotros
-            </Link>
-          </li>
-          <li>
-            <Link to="/contacto" className="link" onClick={() => setMenuOpen(false)}>
-              Contacto
-            </Link>
-          </li>
+          <li><Link to="/" className="link" onClick={toggleMenu}>Inicio</Link></li>
+          <li><Link to="/productos" className="link" onClick={toggleMenu}>Productos</Link></li>
+          <li><Link to="/acercade" className="link" onClick={toggleMenu}>Nosotros</Link></li>
+          <li><Link to="/contacto" className="link" onClick={toggleMenu}>Contacto</Link></li>
           <li className="btnLogin">
-            <Link to="/login" className="link" onClick={() => setMenuOpen(false)}>
+            <Link to="/login" className="link" onClick={toggleMenu}>
               <i className="fa-solid fa-right-to-bracket"></i>
             </Link>
           </li>
           <li className="btnAdmin">
-            <Link to="/admin" className="link" onClick={() => setMenuOpen(false)}>
+            <Link to="/admin" className="link" onClick={toggleMenu}>
               <i className="fa-solid fa-user-tie"></i>
             </Link>
           </li>
@@ -73,8 +59,6 @@ const Header = ({ cartItems, borrarProducto }) => {
               <i className="fa-solid fa-cart-shopping"></i>
             </button>
             <Cart
-              borrarProducto={borrarProducto}
-              cartItems={cartItems}
               isOpen={isCartOpen}
               onClose={() => setCartOpen(false)}
             />
@@ -86,3 +70,4 @@ const Header = ({ cartItems, borrarProducto }) => {
 };
 
 export default Header;
+

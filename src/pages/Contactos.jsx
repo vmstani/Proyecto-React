@@ -166,7 +166,7 @@ const Contactos = ({ cart, borrarProducto }) => {
                     <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
                     Enviando...
                   </>
-                ) : 'Enviar Mensaje'}
+                ) : 'Enviar'}
               </Button>
             </div>
           </Form>

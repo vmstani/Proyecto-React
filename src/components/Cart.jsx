@@ -1,35 +1,35 @@
 import React from 'react';
 import './styleCart.css';
+import { useCart } from '../context/CartContext'; // Asegurate de que la ruta sea correcta
 
-const Cart = ({ cartItems, isOpen, onClose, borrarProducto }) => {
-  // Calcular el total sumando precio * cantidad de cada item
-  // Eliminamos 'subtotal' y 'impuestos' y simplemente calculamos el 'total' directamente
-  const total = cartItems.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
+const Cart = ({ isOpen, onClose }) => {
+  const { cart, handleDeleteFromCart } = useCart();
+
+  const total = cart.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   const handleCheckout = () => {
-    // Aquí iría la lógica para procesar el pago
     alert(`Compra finalizada por $${total.toFixed(2)}`);
-    // Podrías limpiar el carrito aquí si es necesario
+    // Aquí podrías vaciar el carrito si querés
   };
 
   return (
     <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
-      <div className='cart-header'>
+      <div className="cart-header">
         <h2>Carrito de Compras</h2>
-        <button onClick={onClose} className='close-button'>
+        <button onClick={onClose} className="close-button">
           <i className="fa-solid fa-times"></i>
         </button>
       </div>
 
-      <div className='cart-content'>
-        {cartItems.length === 0 ? (
+      <div className="cart-content">
+        {cart.length === 0 ? (
           <div className="empty-cart">
             <i className="fa-solid fa-cart-shopping"></i>
             <p>Tu carrito está vacío</p>
           </div>
         ) : (
           <div className="items-container">
-            {cartItems.map((item) => (
+            {cart.map((item) => (
               <div key={`${item.id}-${item.quantity}`} className="cart-item">
                 <div className="item-info">
                   <span className="item-name">{item.nombre}</span>
@@ -40,7 +40,7 @@ const Cart = ({ cartItems, isOpen, onClose, borrarProducto }) => {
                     <span>Cantidad: {item.quantity}</span>
                   </div>
                   <button
-                    onClick={() => borrarProducto(item)}
+                    onClick={() => handleDeleteFromCart({ ...item, quantity: 1 })}
                     className="remove-item"
                     aria-label="Eliminar producto"
                   >
@@ -53,18 +53,14 @@ const Cart = ({ cartItems, isOpen, onClose, borrarProducto }) => {
         )}
       </div>
 
-      {cartItems.length > 0 && (
+      {cart.length > 0 && (
         <div className="cart-summary">
-          {/* Eliminamos la fila de "Subtotal" y "Impuestos" */}
           <div className="summary-row total">
             <span>Total:</span>
             <span>${total.toFixed(2)}</span>
           </div>
 
-          <button
-            className="checkout-button"
-            onClick={handleCheckout}
-          >
+          <button className="checkout-button" onClick={handleCheckout}>
             <i className="fa-solid fa-credit-card"></i> Finalizar Compra
           </button>
         </div>
@@ -74,3 +70,4 @@ const Cart = ({ cartItems, isOpen, onClose, borrarProducto }) => {
 };
 
 export default Cart;
+

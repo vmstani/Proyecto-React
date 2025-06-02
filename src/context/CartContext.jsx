@@ -1,65 +1,83 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from 'react';
 
-export const CartContext = createContext()
+// Crear el contexto
+export const CartContext = createContext();
 
+// Hook personalizado para usar el contexto
+export const useCart = () => useContext(CartContext);
+
+// Proveedor del contexto
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
-    const [productos, setProductos] = useState([])
-    const [cargando, setCargando] = useState(true)
-    const [error, setError] = useState(false)
-    const [isAuthenticated, setIsAuth] = useState(false)
+  const [cart, setCart] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(false);
+  const [isAuthenticated, setIsAuth] = useState(false);
 
-    useEffect(() => {
-        fetch('/data/data.json')
-            .then(respuesta => respuesta.json())
-            .then(datos => {
-                setTimeout(() => {
-                    setProductos(datos)
-                    setCargando(false)
-                }, 2000)
-            })
-            .catch(error => {
-                console.log('Error', error)
-                setCargando(false)
-                setError(true)
-            })
+  // Cargar productos desde JSON
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(res => res.json())
+      .then(data => {
+        setTimeout(() => {
+          setProductos(data);
+          setCargando(false);
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Error al cargar productos:', err);
+        setError(true);
+        setCargando(false);
+      });
+  }, []);
 
-    }, [])
+  // Agregar producto al carrito
+  const handleAddToCart = (product) => {
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      setCart(cart.map(item =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + (product.quantity || 1) }
+          : item
+      ));
+    } else {
+      setCart([...cart, { ...product, quantity: product.quantity || 1 }]);
+    }
+  };
 
-    const handleAddToCart = (product) => {
+  // Eliminar producto del carrito
+  const handleDeleteFromCart = (product) => {
+    setCart(prevCart =>
+      prevCart
+        .map(item =>
+          item.id === product.id
+            ? item.quantity > 1
+              ? { ...item, quantity: item.quantity - 1 }
+              : null
+            : item
+        )
+        .filter(item => item !== null)
+    );
+  };
 
-        const productInCart = cart.find((item) => item.id === product.id);
-        if (productInCart) {
+  // Vaciar carrito (opcional)
+  const vaciarCarrito = () => setCart([]);
 
-            setCart(cart.map((item) => item.id === product.id ? { ...item, cantidad: product.cantidad } : item));
-        } else {
-            setCart([...cart, { ...product, cantidad: product.cantidad }]);
-        }
-    };
-
-    const handleDeleteFromCart = (product) => {
-        setCart(prevCart => {
-            return prevCart.map(item => {
-                if (item.id === product.id) {
-                    if (item.cantidad > 1) {
-                        return { ...item, cantidad: item.cantidad - 1 };
-                    } else {
-                        return null; // Si quantity es 1, marcamos para eliminar
-                    }
-                } else {
-                    return item; // Si no es el producto, lo dejamos igual
-                }
-            }).filter(item => item !== null); // Quitamos los productos nulos
-        });
-    };
-
-    return (
-        <CartContext.Provider 
-        value={
-
-            { cart, productos, cargando, error, handleAddToCart, handleDeleteFromCart, isAuthenticated,setIsAuth }
-        }>
-            {children}
-        </CartContext.Provider>
-    )
-}
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        productos,
+        cargando,
+        error,
+        handleAddToCart,
+        handleDeleteFromCart,
+        vaciarCarrito,
+        isAuthenticated,
+        setIsAuth
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
