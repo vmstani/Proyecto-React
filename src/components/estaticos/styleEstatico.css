@@ -1,38 +1,55 @@
-/* Estilos generales del header */
+/* Estilos base */
 header {
   background-color: #a014d8;
   color: white;
   padding: 10px 20px;
   position: relative;
+  z-index: 100;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Navegación */
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
+  align-items: center;
   margin: 0;
   padding: 0;
-  align-items: center;
 }
 
 .nav-links li {
   margin-left: 20px;
-}
-
-.nav-links li:first-child {
-  margin-left: 0;
 }
 
 .link {
@@ -46,105 +63,63 @@ nav {
   color: #f1d1ed;
 }
 
+/* Carrito */
 .cartnav {
   position: relative;
 }
 
 .btnCart {
-  background-color: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  outline: none;
-  padding: 0;
 }
 
 .fa-cart-shopping {
-  color: rgb(230, 222, 222);
   font-size: 1.5rem;
+  color: white;
 }
 
-/* Estilos del menú hamburguesa (oculto por defecto en pantallas grandes) */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.4s;
-}
-
-/* Animación del icono */
-header.menu-open .menu-toggle .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-header.menu-open .menu-toggle .bar:nth-child(2) {
-  opacity: 0;
-}
-
-header.menu-open .menu-toggle .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Estilos para la lista de navegación desplegable */
-.nav-links.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #a014d8;
-  width: 100%;
-  z-index: 10;
-  padding: 10px 0;
-  align-items: center;
-}
-
-.nav-links.open li {
-  margin: 10px 0;
-  width: 100%;
-  text-align: center;
-}
-
-/* Estilos responsivos */
+/* Responsive */
 @media (max-width: 768px) {
-  nav {
+  .menu-toggle {
     display: flex;
-    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
   }
 
   .nav-links {
-    display: none; /* Ocultar la lista en pantallas pequeñas por defecto */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #a014d8;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block; /* Mostrar el menú hamburguesa */
-  }
-
   .nav-links li {
-    margin-left: 0; /* Eliminar margen izquierdo en la vista vertical */
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .btnLogin,
+  .btnAdmin {
+    margin-top: 10px;
   }
 }
 
-footer{
-    background-color: #0e0d0d;
-    color: rgb(238, 232, 232);
-    padding: 10px;
-    text-align: center;
-    margin-top: 210px;
-    
-    
+/* Animación del icono hamburguesa */
+header.menu-open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.logo img {
-  height: 40px; /* Ajusta el tamaño según necesites */
-  width: auto; /* Mantiene la proporción */
+header.menu-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+header.menu-open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
