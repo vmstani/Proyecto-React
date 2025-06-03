@@ -1,0 +1,39 @@
+.detalle-producto {
+  max-width: 800px;
+  margin: 100px auto 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.detalle-imagen {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+.detalle-precio,
+.detalle-stock,
+.detalle-descripcion {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.volver-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #7e22ce;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.volver-link:hover {
+  color: #6b21a8;
+}

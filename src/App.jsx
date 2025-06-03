@@ -23,13 +23,16 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
-  useEffect(()=>{
+ // useEffect(()=>{
     fetch('/data/data.json')
     .then(respuesta => respuesta.json())
     .then(datos => {
       setTimeout(()=>{
         setProductos(datos)
         setCargando(false)
+        if (!localStorage.getItem('productos')){
+           localStorage.setItem('productos', JSON.stringify(datos))
+        }
       },2000)
     })
     .catch(error =>{
@@ -38,7 +41,7 @@ function App() {
       setError(true)
     })
 
-  },[])
+ // },[])
 
   const handleAddToCart = (product) => {
 

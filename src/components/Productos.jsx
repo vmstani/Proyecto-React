@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styleProductos.css';
-import { useCart } from '../context/CartContext'; // Ajustá la ruta
+import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const Productos = ({ producto }) => {
   const [cantidad, setCantidad] = useState(1);
@@ -11,11 +12,13 @@ const Productos = ({ producto }) => {
 
   return (
     <section className='card'>
-      <div className='imganContainer'>
-        <img src={producto.imagen} alt="" className='imagen' />
-      </div>
+      <Link to={`/producto/${producto.id}`} className="link-detalle">
+        <div className='imganContainer'>
+          <img src={producto.imagen} alt={producto.nombre} className='imagen' />
+        </div>
+        <h3 className='nombre'>{producto.nombre}</h3>
+      </Link>
 
-      <h3 className='nombre'>{producto.nombre}</h3>
       <p className='precio'>${producto.precio}</p>
       <p className='stock'>Disponibles: {producto.stock}</p>
 
@@ -35,5 +38,6 @@ const Productos = ({ producto }) => {
   );
 };
 
-export default Productos;
+export default Productos
+
 

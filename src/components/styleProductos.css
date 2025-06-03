@@ -128,3 +128,10 @@
   transform: none; /* Asegura que no haya efecto de hover cuando está deshabilitado */
   box-shadow: none;
 }
+
+
+.link-detalle {
+  text-decoration: none;
+  color: inherit;
+}
+

@@ -2,8 +2,7 @@ import React from 'react';
 import Header from '../components/estaticos/Header';
 import Footer from '../components/estaticos/Footer';
 import './styleAcercaDe.css';
-// Importa la imagen correctamente
-import barImage from '../assets/fitness.jpeg'; // Asegúrate que la ruta sea correcta
+import barImage from '../assets/fitness.jpeg'; 
 
 const AcercaDe = ({ cart, borrarProducto }) => {
   return (
