@@ -30,8 +30,7 @@ const Productos = ({ producto }) => {
 
       <button
         onClick={() => handleAddToCart({ ...producto, quantity: cantidad })}
-        className='qtyButton'
-      >
+        className='qtyButton'>
         Agregar al carrito
       </button>
     </section>

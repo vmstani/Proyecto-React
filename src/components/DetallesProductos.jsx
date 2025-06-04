@@ -25,7 +25,7 @@ const DetallesProductos = ({ productos, agregarCarrito }) => {
             <img src={product.imagen} alt={product.nombre} className="detalle-imagen" />
             <p className="detalle-precio"><strong>Precio:</strong> ${product.precio}</p>
             <p className="detalle-stock"><strong>Stock disponible:</strong> {product.stock}</p>
-            <p className="detalle-descripcion"><strong>Descripción:</strong> {product.descripcion || 'Sin descripción disponible.'}</p>
+            <p className="detalle-descripcion"><strong>Descripción:</strong> {product.descripcion}</p>
       
             <Link to="/productos" className="volver-link">← Volver a productos</Link>
           </>

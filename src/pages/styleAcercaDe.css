@@ -1,3 +1,6 @@
+/* styleAcercaDe.css */
+
+/* --- Contenedor principal --- */
 .container {
   display: flex;
   max-width: 1200px;
@@ -6,21 +9,38 @@
   gap: 40px;
 }
 
+/* --- Columnas de contenido --- */
 .text-column {
   flex: 1;
 }
 
 .image-column {
   flex: 1;
+  display: flex; /* Para centrar la imagen si fuera necesario */
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
 }
 
-.bar-image {
+/* --- Estilo de la imagen --- */
+.fitness-image { /* Cambiado de .bar-image a .fitness-image */
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Limita el ancho máximo para que no sea demasiado grande en pantallas amplias */
+  display: block; /* Elimina espacio extra debajo de la imagen si se comporta como inline */
 }
 
+/* --- Título H1 "Nosotros" --- */
+.nosotros-title { /* Añade esta clase a tu h1 para controlarlo */
+  text-align: center; /* Centra el texto */
+  margin-top: 40px;   /* Mayor separación del header. Ajusta si es necesario */
+  margin-bottom: 20px; /* Separación del contenido principal */
+  color: #333;       /* Un color de texto estándar */
+  font-size: 2.8em;  /* Un tamaño de fuente que destaque */
+}
+
+/* --- Otros estilos de texto --- */
 .text-center {
   text-align: center;
 }
@@ -32,11 +52,24 @@
 .signature {
   font-style: italic;
   margin-top: 2rem;
+  text-align: right; /* Alinea la firma a la derecha */
 }
 
-/* Responsive */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 15px; /* Reduce el padding en móviles */
+  }
+  .nosotros-title {
+    margin-top: 60px; /* Un poco menos de margen en móviles */
+    font-size: 2em;
+  }
+  .image-column {
+    order: -1; /* Opcional: mueve la imagen arriba del texto en móvil */
+    margin-bottom: 20px; /* Espaciado extra si la imagen va arriba */
+  }
+  .signature {
+    text-align: center; /* Centra la firma en móviles */
   }
 }

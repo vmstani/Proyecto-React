@@ -5,7 +5,8 @@
       "precio": 115000,
       "stock": 20,
       "imagen": "https://www.runfit.es/wp-content/uploads/2019/09/ejercicios-fuerza-2.jpg",
-      "categoria": "fuerza"
+      "categoria": "fuerza",
+      "descripcion": "Este curso te introduce al Entrenamiento Funcional, una metodología clave para mejorar el rendimiento físico y la calidad de vida. Aprenderás a diseñar rutinas basadas en movimientos naturales, optimizando la fuerza, flexibilidad, equilibrio y coordinación."
     },
     {
       "id": 2,

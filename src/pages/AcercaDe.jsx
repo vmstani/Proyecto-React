@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from '../components/estaticos/Header';
 import Footer from '../components/estaticos/Footer';
-import './styleAcercaDe.css';
+import './styleAcercaDe.css'; // Asegúrate de que esta ruta sea correcta
 import barImage from '../assets/fitness.jpeg'; 
 
 const AcercaDe = ({ cart, borrarProducto }) => {
   return (
     <>
       <Header borrarProducto={borrarProducto} cartItems={cart} />
-      <h1 className="text-center mb-4">Nosotros</h1>
+      {/* Aplicamos la clase 'nosotros-title' para los nuevos estilos */}
+      <h1 className="nosotros-title">Nosotros</h1> 
       <div className="container">
         <div className="text-column">
           <h2>Mi Viaje, Tu Transformación</h2>
@@ -20,7 +21,7 @@ const AcercaDe = ({ cart, borrarProducto }) => {
           <p className="signature">Así que, bienvenido/a. ¿Estás listo/a para empezar tu propia transformación?<br /></p>
         </div>
         <div className="image-column">
-          {/* Usa la imagen importada */}
+          {/* Asegúrate de que la clase de la imagen sea 'fitness-image' */}
           <img src={barImage} alt="Fitness" className="fitness-image" />
         </div>
       </div>
@@ -29,4 +30,4 @@ const AcercaDe = ({ cart, borrarProducto }) => {
   );
 };
 
-export default AcercaDe
+export default AcercaDe;
