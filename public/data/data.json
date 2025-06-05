@@ -3,10 +3,10 @@
       "id": 1,
       "nombre": "Curso de Entrenador Personal",
       "precio": 115000,
-      "stock": 20,
+      "stock": 40,
       "imagen": "https://www.runfit.es/wp-content/uploads/2019/09/ejercicios-fuerza-2.jpg",
       "categoria": "fuerza",
-      "descripcion": "Este curso te introduce al Entrenamiento Funcional, una metodología clave para mejorar el rendimiento físico y la calidad de vida. Aprenderás a diseñar rutinas basadas en movimientos naturales, optimizando la fuerza, flexibilidad, equilibrio y coordinación."
+      "descripcion": "A lo largo del curso, aprenderás a estructurar sesiones de HIIT efectivas, combinando periodos de trabajo intenso con fases de descanso estratégico, y cómo aplicar las progresiones adecuadas para adaptar los entrenamientos a cualquier nivel de condición física, desde principiantes hasta atletas avanzados. Este conocimiento te permitirá no solo optimizar tus propias rutinas y desafiar tus límites, sino también ofrecer a tus clientes planes de entrenamiento dinámicos y con resultados tangibles. ¡Prepárate para transformar el rendimiento y la eficiencia en cada sesión!"
     },
     {
       "id": 2,
@@ -14,7 +14,8 @@
       "precio": 90000,
       "stock": 30,
       "imagen": "https://nombredemujer.es/wp-content/uploads/2022/11/IMAGEN-CURSOS.jpg",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion": "El curso de Hipopresivos Nivel 1 te sumerge en las bases de esta innovadora técnica postural y respiratoria. Aprenderás los principios fundamentales y la ejecución correcta de los ejercicios hipopresivos, que se enfocan en la activación del core profundo, la reeducación postural y la gestión de la presión intraabdominal. Este nivel inicial te proporcionará las herramientas para mejorar tu salud pélvica, reducir el perímetro de cintura, fortalecer la faja abdominal sin impacto, y optimizar tu respiración y postura general. ¡Es el punto de partida para transformar tu bienestar desde adentro!"
     },
     {
       "id": 3,
@@ -22,7 +23,8 @@
       "precio": 50000,
       "stock": 20,
       "imagen": "https://www.vtv.gob.ve/wp-content/uploads/2022/03/estira.png",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion":"Descubrirás cómo aumentar tu rango de movimiento de forma segura y efectiva, una clave fundamental para mejorar tu rendimiento deportivo y tus actividades diarias. Te brindaremos las herramientas para prevenir lesiones al preparar tu cuerpo para el movimiento y para cultivar una mayor conciencia corporal, conectando con cada parte de vos. Todo esto, a tu propio ritmo, sin presiones ni la necesidad de seguir horarios fijos. Es el camino flexible y accesible que buscabas para conseguir un cuerpo más ágil, libre y una mente más relajada y en equilibrio. ¡Empezá hoy mismo tu viaje hacia una mejor versión de vos!"
     },
     {
       "id": 4,
@@ -30,7 +32,8 @@
       "precio": 99000,
       "stock": 50,
       "imagen": "https://www.soycorredor.es/uploads/s1/10/15/92/61/swing-con-kettlebell-como-parte-de-tu-entrenamiento-funcional_2_790x454.jpeg",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion":"Este curso de Entrenamiento Funcional te sumergirá en una de las metodologías de fitness más eficaces y demandadas de la actualidad. Diseñado para entrenadores, preparadores físicos, profesionales de la salud y entusiastas del ejercicio, este programa te proporcionará las herramientas y conocimientos necesarios para diseñar e implementar rutinas que no solo mejoren el rendimiento físico, sino que también optimicen la calidad de vida de tus clientes."
     },
     {
       "id": 5,
@@ -38,7 +41,8 @@
       "precio": 55000,
       "stock": 35,
       "imagen": "https://clubgymsierra.es/wp-content/uploads/2021/06/Ejercicios-para-conseguir-el-six-pack-abs.png",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion": "Nuestro curso de Abs está diseñado para que desarrolles un core fuerte y definido. Aprenderás las técnicas más efectivas para trabajar los diferentes músculos abdominales, desde el recto abdominal hasta los oblicuos y el transverso, a través de ejercicios variados y progresiones seguras. Este programa te ayudará a mejorar tu postura, reducir el riesgo de lesiones y alcanzar la fuerza y estética abdominal que buscás, sin importar tu nivel de experiencia"
     },
     {
       "id": 6,
@@ -46,7 +50,8 @@
       "precio": 60000,
       "stock": 25,
       "imagen": "https://www.hola.com/horizon/original_aspect_ratio/10d89c409358-patada-gluteo-2z-z.jpg?im=Resize=(640),type=downsize",
-      "categoria": "fuerza"
+      "categoria": "fuerza",
+      "descripcion":"Nuestro Curso Especializado en Glúteos te sumerge en la ciencia y las técnicas avanzadas para desarrollar y fortalecer la musculatura glútea de manera óptima. Desde la anatomía funcional y la biomecánica de la cadera, hasta la implementación de ejercicios específicos, progresiones y métodos de entrenamiento basados en evidencia, aprenderás a diseñar programas altamente efectivos para hipertrofia, fuerza y estética. Este curso te brindará las herramientas para maximizar resultados, corregir desequilibrios y comprender el verdadero potencial de esta poderosa zona corporal"
     },
 
     {
@@ -55,15 +60,17 @@
       "precio": 70000,
       "stock": 55,
       "imagen": "https://as01.epimg.net/deporteyvida/imagenes/2017/09/02/portada/1504312026_944464_1504312206_noticia_normal_recorte1.jpg",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion":"Nuestro curso de HIIT (High-Intensity Interval Training) te enseñará a diseñar y aplicar entrenamientos interválicos de alta intensidad, maximizando la quema de grasa y mejorando la capacidad cardiovascular en menos tiempo. Aprenderás las bases fisiológicas del HIIT, cómo estructurar sesiones efectivas con periodos de trabajo intenso y descanso, y las progresiones adecuadas para distintos niveles de condición física. Este programa te dará las herramientas para optimizar tus rutinas y las de tus clientes, obteniendo resultados rápidos y eficientes."
     },
-     {
+    {
       "id": 8,
       "nombre": "Planificación Personalizada",
       "precio": 20000,
       "stock":  15,
       "imagen": "https://co.fitness24seven.com/media/gpskprjz/pt-konsultation.png?cc=0,0.2059608394851961,0,0.349703223014804&width=630&quality=75&v=1da6c1a71b29750",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion":"¿Cansado/a de entrenamientos genéricos que no te llevan a ningún lado? Con la planificación de rutinas personalizadas, vas a transformar tu cuerpo y tu rendimiento deportivo de forma efectiva y duradera. Olvidate de la frustración y la falta de dirección; te ofrezco un servicio diseñado exclusivamente para vos, tus metas fitness, tu nivel actual y tu estilo de vida. Por eso, mi metodología se basa en un análisis detallado de tus necesidades, preferencias y cualquier limitación física. A partir de ahí, voy a diseñar un plan de entrenamiento completo y progresivo que se ajuste perfectamente a tus tiempos, tu equipamiento disponible (gimnasio o casa) y tu capacidad."
     },
       {
       "id": 9,
@@ -71,7 +78,8 @@
       "precio": 20000,
       "stock":  15,
       "imagen": "https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2021/08/22/6121eeb0e59a5.png",
-      "categoria": "fitness"
+      "categoria": "fitness",
+      "descripcion":"¡Dale un giro a tu bienestar con nuestro Reto de 21 Días de Hipopresivos a tu Tiempo! Este programa intensivo y completamente flexible está diseñado para que, en solo tres semanas, domines la técnica hipopresiva y experimentes transformaciones reales en tu cuerpo. Aprenderás a fortalecer tu core profundo, mejorar drásticamente tu postura, reducir el perímetro de cintura y tonificar tu suelo pélvico, todo ello sin impacto y desde la comodidad de tu hogar. Con acceso a clases que puedes realizar a tu propio ritmo, este reto es la oportunidad perfecta para integrar un hábito saludable que te proporcionará beneficios duraderos. ¡Es tu momento para sentirte más fuerte, ágil y con mayor conciencia corporal!"
     }
     
   ]
