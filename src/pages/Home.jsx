@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import bannerImage from '../assets/gym.jpg';
 import './styleHome.css';
-import { useCart } from '../context/CartContext'; // Asegurate de que la ruta sea correcta
+import { useCart } from '../context/CartContext';
 
 const Home = () => {
   const {
@@ -50,7 +50,7 @@ const Home = () => {
                   Sabemos que el camino hacia una vida activa puede parecer abrumador...
                 </p>
                 <div className="highlight-box">
-                  <p>¡Tu próximo transformación comienza aquí!</p>
+                  <p>¡Tu próxima transformación comienza aquí!</p>
                 </div>
               </div>
 
