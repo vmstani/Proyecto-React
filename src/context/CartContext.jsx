@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
       toast.info(`Se actualizó la cantidad de "${product.nombre}"`);
     } else {
       setCart([...cart, { ...product, quantity: product.quantity || 1 }]);
-      toast.success(`"${product.nombre}" agregado al carrito`);
+      toast.success(`El producto "${product.nombre}" se ha agregado al carrito`);
     }
   };
 
@@ -56,7 +56,7 @@ export const CartProvider = ({ children }) => {
     setCart(updatedCart);
 
     if (updatedCart.length < cart.length) {
-      toast.warn(`"${product.nombre}" eliminado del carrito`);
+      toast.warn(`El producto "${product.nombre}" se ha eliminado del carrito`);
     }
   };
 

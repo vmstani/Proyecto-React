@@ -13,21 +13,6 @@ const Admin = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    /*useEffect(() => {
-        fetch("/data/data.json")
-            .then((response) => response.json())
-            .then((data) => {
-                setTimeout(() => {
-                    setProducts(data);
-                    setLoading(false);
-                }, 2000);
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-                setLoading(false);
-            });
-    }, []);
-*/
     const handleLogout = () => {
         localStorage.removeItem("token");
         sessionStorage.clear();
@@ -46,13 +31,13 @@ const Admin = () => {
             const updatedProducts = products.map((p) =>
                 p.id === form.id
                     ? {
-                          ...p,
-                          nombre: form.name,
-                          precio: form.price,
-                          stock: form.stock,
-                          imagen: form.imagen,
-                          categoria: form.categoria
-                      }
+                        ...p,
+                        nombre: form.name,
+                        precio: form.price,
+                        stock: form.stock,
+                        imagen: form.imagen,
+                        categoria: form.categoria
+                    }
                     : p
             );
             setProducts(updatedProducts);
