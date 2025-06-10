@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './styleAdmin.css';
+import Swal from 'sweetalert2';
 
 const Admin = () => {
-    const [products, setProducts] = useState(JSON.parse(localStorage.getItem('productos')));
+    const [products, setProducts] = useState(JSON.parse(localStorage.getItem('productos')) || []);
     const [form, setForm] = useState({
         id: null,
         name: "",
@@ -26,6 +27,7 @@ const Admin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         if (form.id) {
             // Editar producto existente
             const updatedProducts = products.map((p) =>
@@ -41,7 +43,14 @@ const Admin = () => {
                     : p
             );
             setProducts(updatedProducts);
-            localStorage.setItem('productos', JSON.stringify(updatedProducts))
+            localStorage.setItem('productos', JSON.stringify(updatedProducts));
+            
+            Swal.fire({
+                title: '¡Producto actualizado!',
+                text: 'El producto se ha actualizado correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
         } else {
             // Agregar nuevo producto
             const newProduct = {
@@ -52,8 +61,16 @@ const Admin = () => {
                 imagen: form.imagen,
                 categoria: form.categoria
             };
-            setProducts([...products, newProduct]);
-            localStorage.setItem('productos', JSON.stringify([...products, newProduct]))
+            const newProducts = [...products, newProduct];
+            setProducts(newProducts);
+            localStorage.setItem('productos', JSON.stringify(newProducts));
+            
+            Swal.fire({
+                title: '¡Producto agregado!',
+                text: 'El producto se ha agregado correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
         }
 
         // Limpiar formulario
@@ -79,11 +96,28 @@ const Admin = () => {
     };
 
     const handleDelete = (id) => {
-        const confirmDelete = window.confirm("¿Estás seguro de que querés eliminar este producto?");
-        if (confirmDelete) {
-            setProducts(products.filter((p) => p.id !== id));
-            localStorage.setItem('productos',JSON.stringify(products.filter((p) => p.id !== id)))
-        }
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const filteredProducts = products.filter((p) => p.id !== id);
+                setProducts(filteredProducts);
+                localStorage.setItem('productos', JSON.stringify(filteredProducts));
+                
+                Swal.fire(
+                    '¡Eliminado!',
+                    'El producto ha sido eliminado.',
+                    'success'
+                );
+            }
+        });
     };
 
     return (
