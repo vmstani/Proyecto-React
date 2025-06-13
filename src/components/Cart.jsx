@@ -1,6 +1,6 @@
 import React from 'react';
 import './styleCart.css';
-import { useCart } from '../context/CartContext'; // Asegurate de que la ruta sea correcta
+import { useCart } from '../context/CartContext'; 
 
 const Cart = ({ isOpen, onClose }) => {
   const { cart, handleDeleteFromCart } = useCart();

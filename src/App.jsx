@@ -12,6 +12,7 @@ import DetallesProductos from './components/DetallesProductos';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import RutaProtegida from './auth/RutasProtegidas';
+import { AdminProvider } from './context/AdminContext';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path="/producto/:id" element={<DetallesProductos />} />
           <Route path="/contacto" element={<Contactos />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<RutaProtegida><Admin /></RutaProtegida>} />
+          <Route path="/admin" element={<RutaProtegida><AdminProvider><Admin /></AdminProvider></RutaProtegida>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer position="top-right" autoClose={2000} />
