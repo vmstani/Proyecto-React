@@ -1,6 +1,6 @@
 import React from 'react';
 import Productos from './Productos';
-import { useCart } from '../context/CartContext'; // Ajustá la ruta si es necesario
+import { useCart } from '../context/CartContext'; 
 
 const ProductList = ({ productos }) => {
   const { handleAddToCart } = useCart();
