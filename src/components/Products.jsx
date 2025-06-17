@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './styleProductos.css';
+import './styleProducts.css';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
-const Productos = ({ producto }) => {
+const Products = ({ producto }) => {
   const [cantidad, setCantidad] = useState(1);
   const { handleAddToCart } = useCart();
 
@@ -37,6 +37,6 @@ const Productos = ({ producto }) => {
   );
 };
 
-export default Productos
+export default Products
 
 

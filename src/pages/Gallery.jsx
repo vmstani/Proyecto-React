@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from '../components/estaticos/Header';
-import Footer from '../components/estaticos/Footer';
+import Header from '../components/estatics/Header';
+import Footer from '../components/estatics/Footer';
 import ProductList from '../components/ProductList';
 import { useCart } from '../context/CartContext'; 
 
-const GaleriaDeProductos = () => {
+const Gallery = () => {
   const {
     cart,
     productos: _productosFromContext, 
@@ -66,4 +66,4 @@ const GaleriaDeProductos = () => {
   );
 };
 
-export default GaleriaDeProductos;
+export default Gallery;

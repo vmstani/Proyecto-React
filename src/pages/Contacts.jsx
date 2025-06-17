@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Header from '../components/estaticos/Header';
-import Footer from '../components/estaticos/Footer';
+import Header from '../components/estatics/Header';
+import Footer from '../components/estatics/Footer';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
-import './styleContactos.css';
+import './styleContacts.css';
 
-const Contactos = ({ cart, borrarProducto }) => {
+const Contacts = ({ cart, borrarProducto }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -178,4 +178,4 @@ const Contactos = ({ cart, borrarProducto }) => {
   );
 };
 
-export default Contactos;
+export default Contacts;

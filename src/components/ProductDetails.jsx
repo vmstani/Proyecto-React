@@ -1,13 +1,13 @@
 
 import { useParams, Link } from 'react-router-dom';
-import Header from './estaticos/Header';
-import Footer from './estaticos/Footer';
-import './DetalleProducto.css';
+import Header from './estatics/Header';
+import Footer from './estatics/Footer';
+import './ProductDetails.css';
 import { useCart } from '../context/CartContext'; 
 
 
 
-const DetallesProductos = () => {
+const ProductDetails = () => {
   const { id } = useParams();
   
     const {
@@ -35,7 +35,7 @@ const DetallesProductos = () => {
             <p className="detalle-descripcion"><strong>Descripción:</strong> {product.descripcion}</p>
             
       
-            <Link to="/productos" className="volver-link">← Volver a productos</Link>
+            <Link to="/products" className="volver-link">← Volver a productos</Link>
           </>
         )}
       </div>
@@ -45,4 +45,4 @@ const DetallesProductos = () => {
   );
 };
 
-export default DetallesProductos;
+export default ProductDetails;

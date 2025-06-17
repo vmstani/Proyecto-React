@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../components/estaticos/Header';
-import Footer from '../components/estaticos/Footer';
-import './styleAcercaDe.css'; // Asegúrate de que esta ruta sea correcta
+import Header from '../components/estatics/Header';
+import Footer from '../components/estatics/Footer';
+import './styleAbout.css'; 
 import barImage from '../assets/fitness.jpeg'; 
 
-const AcercaDe = ({ cart, borrarProducto }) => {
+const About = ({ cart, borrarProducto }) => {
   return (
     <>
       <Header borrarProducto={borrarProducto} cartItems={cart} />
@@ -30,4 +30,4 @@ const AcercaDe = ({ cart, borrarProducto }) => {
   );
 };
 
-export default AcercaDe;
+export default About;

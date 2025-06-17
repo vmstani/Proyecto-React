@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-import { CartContext } from '../context/CartContext'; // Ajustá la ruta
+import { CartContext } from '../context/CartContext'; 
 
-function RutaProtegida({ children }) {
+function  ProtectedRoutes ({children }) {
   const { isAuthenticated } = useContext(CartContext);
 
   if (!isAuthenticated) {
@@ -12,4 +12,4 @@ function RutaProtegida({ children }) {
   return children;
 }
 
-export default RutaProtegida;
+export default  ProtectedRoutes;

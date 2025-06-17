@@ -4,14 +4,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './pages/Home';
-import AcercaDe from './pages/AcercaDe';
-import Contactos from './pages/Contactos';
-import GaleriaDeProductos from './pages/GaleriaDeProductos';
+import About from './pages/About';
+import Contacts from './pages/Contacts';
+import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
-import DetallesProductos from './components/DetallesProductos';
+import ProductDetails from './components/ProductDetails';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
-import RutaProtegida from './auth/RutasProtegidas';
+import ProtectedRoutes from './auth/ProtectedRoutes';
 import { AdminProvider } from './context/AdminContext';
 
 function App() {
@@ -20,12 +20,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/acercade" element={<AcercaDe />} />
-          <Route path="/productos" element={<GaleriaDeProductos />} />
-          <Route path="/producto/:id" element={<DetallesProductos />} />
-          <Route path="/contacto" element={<Contactos />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Gallery/>} />
+          <Route path="/producto/:id" element={<ProductDetails />} />
+          <Route path="/contact" element={<Contacts />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<RutaProtegida><AdminProvider><Admin /></AdminProvider></RutaProtegida>}/>
+          <Route path="/admin" element={<ProtectedRoutes><AdminProvider><Admin /></AdminProvider></ProtectedRoutes>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer position="top-right" autoClose={2000} />
