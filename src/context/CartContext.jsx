@@ -17,6 +17,7 @@ export const CartProvider = ({ children }) => {
       .then(data => {
         setTimeout(() => {
           setProductos(data);
+          localStorage.setItem('productos', JSON.stringify(data))
           setCargando(false);
         }, 2000);
       })
