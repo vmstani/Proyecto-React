@@ -20,10 +20,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Gallery/>} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/productos" element={<Gallery/>} />
           <Route path="/producto/:id" element={<ProductDetails />} />
-          <Route path="/contact" element={<Contacts />} />
+          <Route path="/contacto" element={<Contacts />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<ProtectedRoutes><AdminProvider><Admin /></AdminProvider></ProtectedRoutes>}/>
           <Route path="*" element={<NotFound />} />

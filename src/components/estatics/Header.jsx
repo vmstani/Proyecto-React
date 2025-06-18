@@ -41,9 +41,9 @@ const Header = () => {
 
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li><Link to="/" className="link" onClick={toggleMenu}>Inicio</Link></li>
-          <li><Link to="/products" className="link" onClick={toggleMenu}>Productos</Link></li>
-          <li><Link to="/about" className="link" onClick={toggleMenu}>Nosotros</Link></li>
-          <li><Link to="/contact" className="link" onClick={toggleMenu}>Contacto</Link></li>
+          <li><Link to="/productos" className="link" onClick={toggleMenu}>Productos</Link></li>
+          <li><Link to="/nosotros" className="link" onClick={toggleMenu}>Nosotros</Link></li>
+          <li><Link to="/contacto" className="link" onClick={toggleMenu}>Contacto</Link></li>
           <li className="btnLogin">
             <Link to="/login" className="link" onClick={toggleMenu}>
               <i className="fa-solid fa-right-to-bracket"></i>

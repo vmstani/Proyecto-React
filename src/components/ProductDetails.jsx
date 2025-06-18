@@ -35,7 +35,7 @@ const ProductDetails = () => {
             <p className="detalle-descripcion"><strong>Descripción:</strong> {product.descripcion}</p>
             
       
-            <Link to="/products" className="volver-link">← Volver a productos</Link>
+            <Link to="/productos" className="volver-link">← Volver a productos</Link>
           </>
         )}
       </div>
