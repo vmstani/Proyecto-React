@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './styleEstatico.css';
+import './styleStatic.css';
 import Cart from '../Cart';
 import logo from '../../assets/logo.png';
 import { useCart } from '../../context/CartContext'; 
