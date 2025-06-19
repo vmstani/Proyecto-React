@@ -20,7 +20,7 @@ const Admin = () => {
         <div className="nav-container">
           <ul className="nav-menu">
             <li className="nav-item">
-              <span className="nav-link">Administración</span>
+              <span className="nav-link">Bienvenido Administrador</span>
             </li>
           </ul>
           <button className="logout-btn" onClick={handleLogout}>
