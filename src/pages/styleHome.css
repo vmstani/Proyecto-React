@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 :root {
-  --primary-color: #6a1b9a; /* Púrpura suave */
-  --secondary-color: #ede7f6; /* Lavanda claro */
-  --accent-color: #9575cd; /* Lila medio */
+  --primary-color: #6a1b9a;
+  --secondary-color: #ede7f6;
+  --accent-color: #9575cd;
   --text-color: #2e2e2e;
   --light-text: #ffffff;
   --dark-bg: #121212;
@@ -25,11 +25,14 @@ body {
   position: relative;
   margin-bottom: 3rem;
   overflow: hidden;
+  height: 100vh;
+  max-height: 70vh;
+  min-height: 60vh;
 }
 
 .hero-image {
   width: 100%;
-  max-height: 70vh;
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.7);
 }
@@ -42,7 +45,9 @@ body {
   text-align: center;
   color: var(--light-text);
   width: 100%;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title {
@@ -108,7 +113,6 @@ body {
 .text-block:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  
 }
 
 .lead-text {
@@ -180,5 +184,15 @@ body {
 
   .text-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 }
