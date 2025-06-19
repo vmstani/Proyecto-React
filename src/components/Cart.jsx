@@ -1,15 +1,22 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import './styleCart.css';
-import { useCart } from '../context/CartContext'; 
+import { useCart } from '../context/CartContext';
 
 const Cart = ({ isOpen, onClose }) => {
-  const { cart, handleDeleteFromCart } = useCart();
+  const { cart, handleDeleteFromCart, vaciarCarrito } = useCart();
 
   const total = cart.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   const handleCheckout = () => {
-    alert(`Compra finalizada por $${total.toFixed(2)}`);
-    // Aquí podrías vaciar el carrito si querés
+    Swal.fire({
+      title: '¡Compra realizada!',
+      text: `Tu compra fue por $${total.toFixed(2)}`,
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    }).then(() => {
+      vaciarCarrito(); // Vacía el carrito después de confirmar
+    });
   };
 
   return (
@@ -70,4 +77,3 @@ const Cart = ({ isOpen, onClose }) => {
 };
 
 export default Cart;
-
